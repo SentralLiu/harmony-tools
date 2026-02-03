@@ -5,12 +5,7 @@ struct Gif {
   @State isProcessing: boolean = false
   @State progress: number = 0
   @State gifResult: string = ''
-  @State gifSettings: {
-    fps: number,
-    width: number,
-    startTime: number,
-    duration: number
-  } = {
+  @State gifSettings: { fps: number, width: number, startTime: number, duration: number } = {
     fps: 10,
     width: 480,
     startTime: 0,
@@ -44,9 +39,6 @@ struct Gif {
               Image($r('app.media.ic_video'))
                 .width(64)
                 .height(64)
-                .onClick(() => {
-                  // 选择视频
-                })
               
               Text('点击选择短视频')
                 .fontSize(16)
@@ -64,7 +56,6 @@ struct Gif {
             .borderRadius(12)
             .margin(16)
           } else {
-            // 已选择视频
             Column({ space: 8 }) {
               Row() {
                 Image($r('app.media.ic_video'))
@@ -78,14 +69,9 @@ struct Gif {
                 Button('更换')
                   .fontSize(12)
                   .backgroundColor('#2196F3')
-                  .onClick(() => {
-                    this.selectedVideo = ''
-                    this.gifResult = ''
-                  })
               }
               .padding(16)
               
-              // 视频预览
               Text('视频预览区域')
                 .width('100%')
                 .height(200)
@@ -110,7 +96,6 @@ struct Gif {
                 .width('100%')
                 .padding({ left: 16 })
               
-              // FPS 设置
               Column({ space: 8 }) {
                 Row() {
                   Text('帧率 (FPS)')
@@ -120,18 +105,14 @@ struct Gif {
                     .fontSize(14)
                     .fontColor('#2196F3')
                 }
-                
                 Slider({ value: this.gifSettings.fps, min: 5, max: 30, step: 1 })
-                  .onChange((value: number) => {
-                    this.gifSettings.fps = value
-                  })
+                  .onChange((value: number) => { this.gifSettings.fps = value })
               }
               .width('100%')
               .padding(16)
               .backgroundColor(Color.White)
               .borderRadius(12)
 
-              // 宽度设置
               Column({ space: 8 }) {
                 Row() {
                   Text('输出宽度')
@@ -141,46 +122,20 @@ struct Gif {
                     .fontSize(14)
                     .fontColor('#2196F3')
                 }
-                
                 Slider({ value: this.gifSettings.width, min: 240, max: 720, step: 48 })
-                  .onChange((value: number) => {
-                    this.gifSettings.width = value
-                  })
+                  .onChange((value: number) => { this.gifSettings.width = value })
               }
               .width('100%')
               .padding(16)
               .backgroundColor(Color.White)
               .borderRadius(12)
 
-              // 时长设置
-              Column({ space: 8 }) {
-                Row() {
-                  Text('GIF 时长')
-                    .fontSize(14)
-                    .layoutWeight(1)
-                  Text(this.gifSettings.duration + '秒')
-                    .fontSize(14)
-                    .fontColor('#2196F3')
-                }
-                
-                Slider({ value: this.gifSettings.duration, min: 1, max: 10, step: 1 })
-                  .onChange((value: number) => {
-                    this.gifSettings.duration = value
-                  })
-              }
-              .width('100%')
-              .padding(16)
-              .backgroundColor(Color.White)
-              .borderRadius(12)
-
-              // 转换按钮
               Button(this.isProcessing ? '转换中 ' + this.progress + '%' : '开始转换')
                 .fontSize(16)
                 .backgroundColor('#4CAF50')
                 .width('100%')
                 .onClick(() => {
                   this.isProcessing = true
-                  // 模拟转换过程
                   let timer = setInterval(() => {
                     this.progress += 10
                     if (this.progress >= 100) {

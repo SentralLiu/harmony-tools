@@ -2,8 +2,7 @@
 @Component
 struct Mirror {
   @State isFrontCamera: boolean = true
-  @State cameraController: any = null
-  @State mirrorMode: string = 'horizontal' // horizontal, vertical, both
+  @State mirrorMode: string = 'horizontal'
 
   build() {
     Column() {
@@ -20,7 +19,6 @@ struct Mirror {
           .fontWeight(FontWeight.Bold)
           .layoutWeight(1)
         
-        // 相机切换
         Image($r('app.media.ic_camera'))
           .width(24)
           .height(24)
@@ -34,9 +32,7 @@ struct Mirror {
 
       // 镜子显示区域
       Stack() {
-        // 相机预览
         Column() {
-          // 这里放置相机预览组件
           Text('前置相机预览')
             .fontSize(18)
             .fontColor('#999')
@@ -78,9 +74,7 @@ struct Mirror {
             .width(64)
             .height(64)
             .stroke(4, Color.White)
-            .onClick(() => {
-              // 拍照功能
-            })
+            .onClick(() => {})
           
           Circle()
             .width(56)
@@ -99,9 +93,6 @@ struct Mirror {
           Image($r('app.media.ic_beauty'))
             .width(32)
             .height(32)
-            .onClick(() => {
-              // 美颜功能
-            })
           Text('美颜')
             .fontSize(10)
             .fontColor('#FFF')
@@ -112,9 +103,6 @@ struct Mirror {
           Image($r('app.media.ic_filter'))
             .width(32)
             .height(32)
-            .onClick(() => {
-              // 滤镜功能
-            })
           Text('滤镜')
             .fontSize(10)
             .fontColor('#FFF')
@@ -125,9 +113,6 @@ struct Mirror {
           Image($r('app.media.ic_sticker'))
             .width(32)
             .height(32)
-            .onClick(() => {
-              // 贴纸功能
-            })
           Text('贴纸')
             .fontSize(10)
             .fontColor('#FFF')

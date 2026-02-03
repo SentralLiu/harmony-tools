@@ -17,8 +17,6 @@ struct Converter {
     { code: 'AUD', name: '澳元', rate: 4.72 },
     { code: 'CAD', name: '加元', rate: 5.36 }
   ]
-  @State showFromPicker: boolean = false
-  @State showToPicker: boolean = false
 
   convert() {
     const fromRate = this.currencies.find(c => c.code === this.fromCurrency)?.rate || 1
@@ -42,9 +40,6 @@ struct Converter {
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
           .layoutWeight(1)
-        
-        Text('')
-          .width(40)
       }
       .height(56)
       .backgroundColor(Color.White)
@@ -74,7 +69,6 @@ struct Converter {
 
         // 货币选择
         Row({ space: 16 }) {
-          // 源货币
           Column({ space: 8 }) {
             Text('从')
               .fontSize(14)
@@ -83,7 +77,9 @@ struct Converter {
             Button(this.fromCurrency + ' ' + this.currencies.find(c => c.code === this.fromCurrency)?.name)
               .fontSize(16)
               .backgroundColor('#4CAF50')
-              .onClick(() => this.showFromPicker = true)
+              .onClick(() => {
+                // 显示货币选择器
+              })
           }
           .layoutWeight(1)
 
@@ -91,7 +87,6 @@ struct Converter {
             .width(32)
             .height(32)
 
-          // 目标货币
           Column({ space: 8 }) {
             Text('至')
               .fontSize(14)
@@ -100,7 +95,9 @@ struct Converter {
             Button(this.toCurrency + ' ' + this.currencies.find(c => c.code === this.toCurrency)?.name)
               .fontSize(16)
               .backgroundColor('#2196F3')
-              .onClick(() => this.showToPicker = true)
+              .onClick(() => {
+                // 显示货币选择器
+              })
           }
           .layoutWeight(1)
         }
@@ -125,37 +122,6 @@ struct Converter {
           .borderRadius(12)
           .margin(16)
         }
-
-        // 汇率信息
-        Column({ space: 8 }) {
-          Text('参考汇率')
-            .fontSize(14)
-            .fontColor('#666')
-            .width('100%')
-            .padding({ left: 16 })
-          
-          ForEach(this.currencies.slice(0, 5), (item: any) => {
-            Row() {
-              Text(item.code)
-                .fontSize(14)
-                .fontWeight(FontWeight.Medium)
-              Text(item.name)
-                .fontSize(12)
-                .fontColor('#999')
-                .layoutWeight(1)
-              Text('1 ' + this.fromCurrency + ' = ' + (item.rate / (this.currencies.find(c => c.code === this.fromCurrency)?.rate || 1)).toFixed(4) + ' ' + item.code)
-                .fontSize(12)
-                .fontColor('#666')
-            }
-            .width('100%')
-            .padding(12)
-            .borderRadius(8)
-            .backgroundColor('#F5F5F5')
-            .margin({ top: 4 })
-          })
-        }
-        .width('100%')
-        .padding(16)
       }
       .layoutWeight(1)
     }

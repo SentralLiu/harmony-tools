@@ -1,4 +1,3 @@
-// 应用入口
 import Ability from '@ohos.app.ability.UIAbility'
 import window from '@ohos.window'
 

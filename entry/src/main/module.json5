@@ -1,10 +1,12 @@
 {
   "module": {
     "name": "entry",
-    "type": "feature",
-    "description": "Entry module",
+    "type": "entry",
+    "description": "$string:module_entry_desc",
     "mainElement": "EntryAbility",
-    "deviceTypes": ["phone"],
+    "deviceTypes": [
+      "phone"
+    ],
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:pages",
@@ -21,7 +23,17 @@
         "label": "$string:app_name",
         "startWindowIcon": "$media:icon",
         "startWindowBackground": "$color:start_window_background",
-        "exported": true
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ]
       }
     ],
     "requestPermissions": [

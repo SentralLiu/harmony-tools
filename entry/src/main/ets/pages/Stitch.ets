@@ -2,10 +2,9 @@
 @Component
 struct Stitch {
   @State images: Array<string> = []
-  @State stitchMode: string = 'horizontal' // horizontal, vertical, grid
+  @State stitchMode: string = 'horizontal'
   @State columns: number = 2
   @State gap: number = 4
-  @State isProcessing: boolean = false
 
   build() {
     Column() {
@@ -25,9 +24,6 @@ struct Stitch {
         Button('保存')
           .fontSize(14)
           .backgroundColor('#4CAF50')
-          .onClick(() => {
-            // 保存拼接结果
-          })
           .enabled(this.images.length > 0)
       }
       .height(56)
@@ -50,19 +46,6 @@ struct Stitch {
           .fontSize(12)
           .backgroundColor(this.stitchMode === 'grid' ? '#2196F3' : '#E0E0E0')
           .onClick(() => this.stitchMode = 'grid')
-        
-        if (this.stitchMode === 'grid') {
-          Text('列数:')
-            .fontSize(12)
-            .margin({ left: 8 })
-          
-          TextInput({ placeholder: '2', text: this.columns.toString() })
-            .type(InputType.Number)
-            .width(50)
-            .onChange((value: string) => {
-              this.columns = parseInt(value) || 2
-            })
-        }
       }
       .padding(16)
       .backgroundColor(Color.White)
@@ -71,14 +54,10 @@ struct Stitch {
       Scroll() {
         Column() {
           if (this.images.length === 0) {
-            // 空状态
             Column({ space: 16 }) {
               Image($r('app.media.ic_add_photo'))
                 .width(64)
                 .height(64)
-                .onClick(() => {
-                  // 选择图片
-                })
               
               Text('点击添加图片')
                 .fontSize(16)
@@ -96,7 +75,6 @@ struct Stitch {
             .borderRadius(12)
             .margin(16)
           } else {
-            // 预览拼接结果
             if (this.stitchMode === 'horizontal') {
               Row({ space: this.gap }) {
                 ForEach(this.images, (url: string) => {
@@ -121,7 +99,6 @@ struct Stitch {
               }
               .padding(16)
             } else {
-              // 网格布局
               Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.Start, alignContent: FlexAlign.Start }) {
                 ForEach(this.images, (url: string) => {
                   Image(url)
@@ -143,17 +120,12 @@ struct Stitch {
         Button('添加图片')
           .fontSize(16)
           .backgroundColor('#2196F3')
-          .onClick(() => {
-            // 选择图片
-          })
           .layoutWeight(1)
         
         Button('清空')
           .fontSize(16)
           .backgroundColor('#FF5722')
-          .onClick(() => {
-            this.images = []
-          })
+          .onClick(() => { this.images = [] })
           .enabled(this.images.length > 0)
           .layoutWeight(1)
       }

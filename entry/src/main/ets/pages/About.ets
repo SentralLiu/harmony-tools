@@ -92,7 +92,6 @@ struct About {
           .width('100%')
           .backgroundColor(Color.White)
 
-          // 版权信息
           Text('© 2026 SentralLiu. MIT License.')
             .fontSize(12)
             .fontColor('#999')

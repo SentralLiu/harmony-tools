@@ -1,0 +1,20 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "鸿蒙工具箱"
+    },
+    {
+      "name": "app_description",
+      "value": "一款功能丰富的鸿蒙工具应用"
+    },
+    {
+      "name": "module_entry_desc",
+      "value": "Entry module"
+    },
+    {
+      "name": "entry_ability_desc",
+      "value": "Entry ability"
+    }
+  ]
+}

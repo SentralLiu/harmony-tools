@@ -1,0 +1,42 @@
+{
+  "signingConfigs": [],
+  "compileMode": {
+    "phone": {
+      "modes": [
+        {
+          "name": "debug",
+          "components": [
+            "default"
+          ]
+        },
+        {
+          "name": "release",
+          "components": [
+            "default"
+          ]
+        }
+      ]
+    }
+  },
+  "products": [
+    {
+      "name": "default",
+      "signingConfig": "default",
+      "compileMode": "debug"
+    }
+  ],
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
