@@ -1,0 +1,42 @@
+{
+  "module": {
+    "name": "entry",
+    "type": "feature",
+    "description": "Entry module",
+    "mainElement": "EntryAbility",
+    "deviceTypes": ["phone"],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:pages",
+    "window": {
+      "designWidth": 720,
+      "autoDesignWidth": false
+    },
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:entry_ability_desc",
+        "icon": "$media:icon",
+        "label": "$string:app_name",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true
+      }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.CAMERA"
+      },
+      {
+        "name": "ohos.permission.WRITE_MEDIA"
+      },
+      {
+        "name": "ohos.permission.READ_MEDIA"
+      },
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ]
+  }
+}

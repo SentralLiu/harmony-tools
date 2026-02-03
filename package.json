@@ -1,0 +1,11 @@
+{
+  "name": "harmony-tools",
+  "version": "1.0.0",
+  "description": "鸿蒙工具箱 - 汇率转换/尺子/镜子/图片拼接/短视频转GIF/图片加相框",
+  "main": "",
+  "author": "SentralLiu",
+  "license": "MIT",
+  "keywords": ["harmonyos", "tools", "converter", "ruler", "mirror", "stitch", "gif"],
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+.vscode
+build
+dist
+*.log
+*.swp
+*.swo
+node_modules/
+.harmony/

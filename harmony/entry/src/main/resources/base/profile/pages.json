@@ -1,0 +1,12 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/Converter",
+    "pages/Ruler",
+    "pages/Mirror",
+    "pages/Stitch",
+    "pages/Gif",
+    "pages/Frame",
+    "pages/About"
+  ]
+}

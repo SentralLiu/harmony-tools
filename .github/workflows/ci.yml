@@ -1,0 +1,46 @@
+name: HarmonyTools CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    - name: Install dependencies
+      run: |
+        npm install
+    
+    - name: Build HarmonyOS App
+      run: |
+        echo "Building HarmonyOS app..."
+        # 这里可以添加构建命令
+    
+    - name: Lint code
+      run: |
+        echo "Running linter..."
+        # 这里可以添加代码检查
+    
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: harmony-tools
+        path: build/
+        retention-days: 7
