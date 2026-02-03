@@ -1,0 +1,12 @@
+{
+  "product": {
+    "name": "phone",
+    "staticNode": "default"
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "entry"
+    }
+  ]
+}
