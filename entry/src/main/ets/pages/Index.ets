@@ -75,6 +75,13 @@ struct Index {
       color: '#795548'
     },
     {
+      name: '表情包制作',
+      icon: $r('app.media.ic_meme'),
+      page: 'pages/MemeMaker',
+      description: '贴图文字画笔',
+      color: '#FF5722'
+    },
+    {
       name: '关于',
       icon: $r('app.media.ic_about'),
       page: 'pages/About',

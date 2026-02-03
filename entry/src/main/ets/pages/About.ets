@@ -54,6 +54,7 @@ struct About {
             this.featureItem('图片拼接', '多图横向纵向拼接', '#FF9800')
             this.featureItem('短视频转GIF', '视频转动态图片', '#E91E63')
             this.featureItem('图片加相框', '边框相框装饰', '#795548')
+            this.featureItem('表情包制作', '贴图文字画笔', '#FF5722')
           }
           .width('100%')
           .backgroundColor(Color.White)

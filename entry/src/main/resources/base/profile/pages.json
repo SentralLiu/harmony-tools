@@ -7,6 +7,7 @@
     "pages/Stitch",
     "pages/Gif",
     "pages/Frame",
+    "pages/MemeMaker",
     "pages/About"
   ]
 }
